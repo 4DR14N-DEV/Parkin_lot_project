@@ -1,6 +1,6 @@
-# 🚗 Parking Lot Project - Frontend
+# Parking Lot Project - Frontend
 
-## 📖 Descripción general
+## Descripción general
 
 Este proyecto es la interfaz de usuario (Frontend) para un sistema de gestión de parqueaderos. Cuenta con 9 vistas diseñadas para ofrecer una experiencia intuitiva, estructuradas con HTML semántico, estilizadas con CSS y con interactividad dinámica en secciones clave mediante JavaScript.
 
@@ -39,6 +39,6 @@ Para ver este proyecto en tu máquina local, sigue estos pasos:
 
 3. Abre el archivo index.html en tu navegador web. (Se recomienda usar la extensión Live Server en VS Code para una mejor experiencia).
 
-## 🧑‍💻 Autor(es)
+## Autor
 
 - **Adrian Yesid Restrepo, Oscar David Gamboa, Johan Andrey Forero** - _Desarrollo del Frontend_ - [https://github.com/4DR14N-DEV]
