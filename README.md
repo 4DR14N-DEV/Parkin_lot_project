@@ -20,12 +20,12 @@ Este proyecto es la interfaz de usuario (Frontend) para un sistema de gestión d
 
 El repositorio está organizado de la siguiente manera:
 
-- `assets/css/` - Archivos de hojas de estilo.
-- `assets/js/` - Scripts de interactividad.
-- `assets/images/` - Recursos gráficos y logos.
-- `assets/fonts/` - Fuentes tipográficas personalizadas.
-- `views/` - Pantallas secundarias de la aplicación.
-- `index.html` - Punto de entrada de la aplicación (Login).
+- `/assets/css/` - Archivos de hojas de estilo.
+- `/assets/js/` - Scripts de interactividad.
+- `/assets/images/` - Recursos gráficos y logos.
+- `/assets/fonts/` - Fuentes tipográficas personalizadas.
+- `/views/` - Pantallas secundarias de la aplicación.
+- `/index.html` - Punto de entrada de la aplicación (Login).
 
 ## Cómo visualizar el proyecto
 
@@ -37,7 +37,7 @@ Para ver este proyecto en tu máquina local, sigue estos pasos:
 
 2. Abre la carpeta del proyecto en tu editor de código preferido (ej. VS Code).
 
-3. Abre el archivo index.html en tu navegador web. (Se recomienda usar la extensión Live Server en VS Code para una mejor experiencia).
+3. Abre el archivo /index.html en tu navegador web. (Se recomienda usar la extensión Live Server en VS Code para una mejor experiencia).
 
 ## Autor
 
