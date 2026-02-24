@@ -20,11 +20,11 @@ Este proyecto es la interfaz de usuario (Frontend) para un sistema de gestión d
 
 El repositorio está organizado de la siguiente manera:
 
-- `ASSETS/css/` - Archivos de hojas de estilo.
-- `ASSETS/js/` - Scripts de interactividad.
-- `ASSETS/images/` - Recursos gráficos y logos.
-- `ASSETS/fonts/` - Fuentes tipográficas personalizadas.
-- `VIEWS/` - Pantallas secundarias de la aplicación.
+- `assets/css/` - Archivos de hojas de estilo.
+- `assets/js/` - Scripts de interactividad.
+- `assets/images/` - Recursos gráficos y logos.
+- `assets/fonts/` - Fuentes tipográficas personalizadas.
+- `views/` - Pantallas secundarias de la aplicación.
 - `index.html` - Punto de entrada de la aplicación (Login).
 
 ## Cómo visualizar el proyecto
@@ -41,4 +41,11 @@ Para ver este proyecto en tu máquina local, sigue estos pasos:
 
 ## Autor
 
-- **Adrian Yesid Restrepo, Oscar David Gamboa, Johan Andrey Forero** - _Desarrollo del Frontend_ - [https://github.com/4DR14N-DEV]
+- **Adrian Yesid Restrepo**
+  [https://github.com/4DR14N-DEV] - _Desarrollo del Frontend_
+
+- **Oscar David Gamboa**
+  [https://github.com/Oskardmt009] - _Desarrollo del Frontend_
+
+- **Johan Andrey Forero**
+  [https://github.com/Johanfor] - _Desarrollo del Frontend_

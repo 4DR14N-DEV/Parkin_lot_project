@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: "poppins";
-  src: url(ASSETS/FONTS/Poppins-Regular.ttf);
+  src: url(assets/fonts/Poppins-Regular.ttf);
 }
 
 @font-face {
   font-family: "Light";
-  src: url(ASSETS/FONTS/Poppins-Light.ttf);
+  src: url(assets/fonts/Poppins-Light.ttf);
 }
 
 :root {
