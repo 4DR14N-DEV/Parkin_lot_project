@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registro de Vehiculo</title>
+    <link rel="stylesheet" href="/ASSETS/CSS/registro_vehiculo.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/ASSETS/IMAGES/formulario-de-llenado.png"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div id="container-img">
+        <img
+          class="logo"
+          src="/ASSETS/IMAGES/logo_parkin_lot.jpeg"
+          alt="Logo Parqueadero"
+        />
+      </div>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="/VIEWS/reporte_consulta.html">Reportes</a></li>
+          <li><a href="/VIEWS/registro_incidencias.html">Incidencias</a></li>
+          <li><a href="/VIEWS/celdas_parqueo.html">Celdas de parqueo</a></li>
+          <li><a href="/VIEWS/acceso.html">Accesos</a></li>
+          <li><a href="/VIEWS/registro_vehiculo.html">Vehículos</a></li>
+          <li>
+            <a href="/index.html">Usuarios</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="/VIEWS/registro_usuario.html">Registro</a></li>
+                <li>
+                  <a href="/VIEWS/perfil_usuario.html">Perfil de Usuario</a>
+                </li>
+                <li>
+                  <a href="/VIEWS/perfil_usuario.html"
+                    >Actualización de datos</a
+                  >
+                </li>
+                <li><a href="#">Estados activo/inactivo</a></li>
+                <li><a href="/index.html">Login</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="tools">
+        <div class="search">
+          <input type="search" id="inp-search" placeholder="Buscar" />
+
+          <button class="btn-search">
+            <img src="/ASSETS/IMAGES/lupa.png" id="lupa-png" alt="Buscar" />
+          </button>
+        </div>
+
+        <select id="language">
+          <option>Español</option>
+          <option>Inglés</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>Sistema de Parqueadero</h1>
+      <h2>Registro de Vehículos</h2>
+
+      <form>
+        <!-- Información del Vehículo -->
+        <div class="section">
+          <div class="section-title">Información del Vehículo</div>
+
+          <div class="form-grid">
+            <div>
+              <label>Placa <span class="required">*</span></label>
+              <input
+                class="inp-main"
+                type="text"
+                placeholder="Ingrese la placa"
+                required
+              />
+            </div>
+
+            <div>
+              <label>Tipo de Vehículo <span class="required">*</span></label>
+              <select id="tipo-vehiculo-select" required>
+                <option value="">Seleccione</option>
+                <option>Carro</option>
+                <option>Moto</option>
+                <option>Camión</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Marca</label>
+              <input
+                class="inp-main"
+                type="text"
+                placeholder="Ingrese la marca del vehículo"
+              />
+            </div>
+
+            <div>
+              <label>Modelo</label>
+              <input
+                class="inp-main"
+                type="text"
+                placeholder="Ingrese el modelo"
+              />
+            </div>
+
+            <div id="color">
+              <label>Color</label>
+              <input
+                class="inp-main"
+                type="text"
+                placeholder="Ingrese el color del vehículo"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Información del Propietario -->
+        <div class="section">
+          <div class="section-title">Información del Propietario</div>
+
+          <div class="form-grid">
+            <div>
+              <label
+                >Nombre del Propietario <span class="required">*</span></label
+              >
+              <input
+                class="inp-main"
+                type="text"
+                placeholder="Ingrese el nombre del propietario"
+                required
+              />
+            </div>
+
+            <div>
+              <label>Número de Espacio</label>
+              <input
+                class="inp-main"
+                type="number"
+                placeholder="Ingrese el número de espacio asignado"
+              />
+            </div>
+          </div>
+
+          <div class="full-width">
+            <label>Observaciones <span class="optional">Opcional</span></label>
+            <textarea placeholder="Opcional"></textarea>
+          </div>
+        </div>
+
+        <div class="full-width buttons">
+          <button type="submit" class="btn-primary">Registrar Vehículo</button>
+          <button type="reset" class="btn-secondary">Limpiar</button>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      © Copyright - 2026: Todos los derechos reservados. Política de privacidad
+    </footer>
+  </body>
+</html>

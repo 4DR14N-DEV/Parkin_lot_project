@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte & Consulta</title>
+    <link
+      rel="icon"
+      type="image/mpeg"
+      href="/ASSETS/IMAGES/formulario-de-llenado.png"
+    />
+    <link rel="stylesheet" href="/ASSETS/CSS/reporte_consulta.css" />
+  </head>
+
+  <body>
+    <header>
+      <div id="container-img">
+        <img
+          class="logo"
+          src="/ASSETS/IMAGES/logo_parkin_lot.jpeg"
+          alt="Logo Parqueadero"
+        />
+      </div>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="/VIEWS/reporte_consulta.html">Reportes</a></li>
+          <li><a href="/VIEWS/registro_incidencias.html">Incidencias</a></li>
+          <li><a href="/VIEWS/celdas_parqueo.html">Celdas de parqueo</a></li>
+          <li><a href="/VIEWS/acceso.html">Accesos</a></li>
+          <li><a href="/VIEWS/registro_vehiculo.html">Vehículos</a></li>
+          <li>
+            <a href="/index.html">Usuarios</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="/VIEWS/registro_usuario.html">Registro</a></li>
+                <li>
+                  <a href="/VIEWS/perfil_usuario.html">Perfil de Usuario</a>
+                </li>
+                <li>
+                  <a href="/VIEWS/perfil_usuario.html"
+                    >Actualización de datos</a
+                  >
+                </li>
+                <li><a href="#">Estados activo/inactivo</a></li>
+                <li><a href="/index.html">Login</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="tools">
+        <div class="search">
+          <input type="search" id="inp-search" placeholder="Buscar" />
+
+          <button class="btn-search">
+            <img src="/ASSETS/IMAGES/lupa.png" id="lupa-png" alt="Buscar" />
+          </button>
+        </div>
+
+        <select id="language">
+          <option>Español</option>
+          <option>Inglés</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h3>MAESTROS</h3>
+        <button class="menu-btn" data-report="usuarios">Usuarios</button>
+        <button class="menu-btn" data-report="vehiculos">Vehículos</button>
+
+        <h3>MOVIMIENTOS</h3>
+        <button class="menu-btn" data-report="entradas">Entradas</button>
+        <button class="menu-btn" data-report="salidas">Salidas</button>
+        <button class="menu-btn" data-report="incidencias">Incidencias</button>
+
+        <h3>ESTADÍSTICAS</h3>
+        <button class="menu-btn" data-report="pico">Pico y placa</button>
+        <button class="menu-btn" data-report="ocupacion">
+          Celdas ocupadas
+        </button>
+        <button class="menu-btn" data-report="topceldas">
+          Celdas más usadas
+        </button>
+        <button class="menu-btn" data-report="topvehiculos">
+          Vehículos frecuentes
+        </button>
+        <button class="menu-btn" data-report="horas">Horas pico</button>
+      </aside>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <!-- FILTROS GENERALES -->
+        <div class="filters">
+          <div>
+            <label>Desde</label>
+            <input type="date" id="from" />
+          </div>
+
+          <div>
+            <label>Hasta</label>
+            <input type="date" id="to" />
+          </div>
+
+          <div>
+            <label>Buscar</label>
+            <input type="text" placeholder="placa / usuario" />
+          </div>
+
+          <button onclick="generateReport()">Generar reporte</button>
+        </div>
+
+        <!-- RESULTADOS -->
+        <div class="result" id="result">
+          <h3>Selecciona un reporte del menú izquierdo</h3>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © Copyright - 2026: Todos los derechos reservados. Política de privacidad
+    </footer>
+    <script src="/ASSETS/JS/reporte_consulta.js"></script>
+  </body>
+</html>

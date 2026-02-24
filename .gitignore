@@ -1,0 +1,11 @@
+# Archivos del sistema operativo (Mac/Windows)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de editores de código (VS Code, etc.)
+.vscode/
+.idea/
+
+# Archivos temporales o de caché
+*.log
