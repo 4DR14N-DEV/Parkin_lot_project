@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="assets/css/registro_usuario.css" />
+  </head>
+
+  <body>
+    <!-- Header a todo el ancho -->
+    <header>
+      <div id="container-img">
+        <img
+          class="logo"
+          src="assets/images/logo_parkin_lot.jpeg"
+          alt="Logo Parqueadero"
+        />
+      </div>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="views/reporte_consulta.html">Reportes</a></li>
+          <li><a href="views/registro_incidencias.html">Incidencias</a></li>
+          <li><a href="views/celdas_parqueo.html">Celdas de parqueo</a></li>
+          <li><a href="views/acceso.html">Accesos</a></li>
+          <li><a href="views/registro_vehiculo.html">Vehículos</a></li>
+          <li>
+            <a href="index.html">Usuarios</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="views/registro_usuario.html">Registro</a></li>
+                <li>
+                  <a href="views/perfil_usuario.html">Perfil de Usuario</a>
+                </li>
+                <li>
+                  <a href="views/perfil_usuario.html">Actualización de datos</a>
+                </li>
+                <li><a href="#">Estados activo/inactivo</a></li>
+                <li><a href="index.html">Login</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="tools">
+        <div class="search">
+          <input type="search" id="inp-search" placeholder="Buscar" />
+
+          <button class="btn-search">
+            <img src="assets/images/lupa.png" id="lupa-png" alt="Buscar" />
+          </button>
+        </div>
+
+        <select id="language">
+          <option>Español</option>
+          <option>Inglés</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <div id="container-registro">
+        <h1>Registro de Usuario</h1>
+        <form id="registroForm">
+          <div class="form-grid">
+            <div>
+              <label>Tipo de documento *</label>
+              <select required>
+                <option value="">Seleccione...</option>
+                <option>Cédula</option>
+                <option>Pasaporte</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Número de documento</label>
+              <input type="number" required placeholder="Ej: 1034265448" />
+            </div>
+
+            <div>
+              <label>Nombre completo</label>
+              <input type="text" required placeholder="Ej: Juan Perez" />
+            </div>
+
+            <div>
+              <label>Correo electrónico</label>
+              <input type="email" placeholder="example@example.com" required />
+            </div>
+
+            <div>
+              <label>Número de celular</label>
+              <input type="tel" required placeholder="+57 3002005212" />
+            </div>
+
+            <div>
+              <label>Tipo de usuario *</label>
+              <select required>
+                <option selected>Cliente</option>
+                <option>Administrador</option>
+                <option>Empleado</option>
+              </select>
+            </div>
+
+            <div class="photo-wrap">
+              <label>Fotografía (opcional)</label>
+              <input type="file" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="reset" class="btn btn-secondary">Cancelar</button>
+          </div>
+        </form>
+
+        <!-- Notificación de registro exitoso -->
+        <div id="notificacion" class="notificacion" style="display: none">
+          <span id="notificacion-texto"></span>
+          <button
+            onclick="
+              document.getElementById('notificacion').style.display = 'none'
+            "
+            class="notif-close"
+            aria-label="Cerrar"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      © Copyright - 2026: Todos los derechos reservados. Política de privacidad
+    </footer>
+
+    <script src="assets/js/registro_usuario.js"></script>
+  </body>
+</html>

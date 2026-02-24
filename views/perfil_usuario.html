@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="assets/css/perfil_usuario.css" />
+    <link rel="icon" type="image/png" href="assets/images/carro.png" />
+  </head>
+
+  <body>
+    <header>
+      <div id="container-img">
+        <img
+          class="logo"
+          src="assets/images/logo_parkin_lot.jpeg"
+          alt="Logo Parqueadero"
+        />
+      </div>
+
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="views/reporte_consulta.html">Reportes</a></li>
+          <li><a href="views/registro_incidencias.html">Incidencias</a></li>
+          <li><a href="views/celdas_parqueo.html">Celdas de parqueo</a></li>
+          <li><a href="views/acceso.html">Accesos</a></li>
+          <li><a href="views/registro_vehiculo.html">Vehículos</a></li>
+          <li>
+            <a href="index.html">Usuarios</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="views/registro_usuario.html">Registro</a></li>
+                <li>
+                  <a href="views/perfil_usuario.html">Perfil de Usuario</a>
+                </li>
+                <li>
+                  <a href="views/perfil_usuario.html">Actualización de datos</a>
+                </li>
+                <li><a href="#">Estados activo/inactivo</a></li>
+                <li><a href="index.html">Login</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="tools">
+        <div class="search">
+          <input type="search" id="inp-search" placeholder="Buscar" />
+
+          <button class="btn-search">
+            <img src="assets/images/lupa.png" id="lupa-png" alt="Buscar" />
+          </button>
+        </div>
+
+        <select id="language">
+          <option>Español</option>
+          <option>Inglés</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <div id="container-form">
+        <h1>Perfil de Usuario</h1>
+        <form id="perfilForm">
+          <div class="form-grid">
+            <div>
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" placeholder="Ingrese su nombre" />
+            </div>
+
+            <div>
+              <label for="documento">Número de documento</label>
+              <input
+                type="text"
+                id="documento"
+                placeholder="Documento asignado"
+              />
+            </div>
+
+            <div>
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" placeholder="Ingrese su correo" />
+            </div>
+
+            <div>
+              <label for="celular">Número de celular</label>
+              <input type="tel" id="celular" placeholder="Ingrese su número" />
+            </div>
+
+            <div class="photo-wrap">
+              <label for="foto">Fotografía</label>
+              <img
+                src="assets/images/Foto.jpg"
+                alt="Foto perfil"
+                class="foto-perfil"
+              />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <button type="reset" class="btn btn-secondary">Cancelar</button>
+          </div>
+
+          <section class="vehiculos">
+            <h2>Vehículos Asociados</h2>
+            <ul>
+              <li>Sin vehículos registrados</li>
+            </ul>
+          </section>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      © Copyright - 2026: Todos los derechos reservados. Política de privacidad
+    </footer>
+  </body>
+</html>
