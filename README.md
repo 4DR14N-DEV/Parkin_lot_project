@@ -41,4 +41,7 @@ Para ver este proyecto en tu máquina local, sigue estos pasos:
 
 ## Autor
 
-- **Adrian Yesid Restrepo, Oscar David Gamboa, Johan Andrey Forero** - _Desarrollo del Frontend_ - [https://github.com/4DR14N-DEV]
+- **Adrian Yesid Restrepo, Oscar David Gamboa, Johan Andrey Forero** - _Desarrollo del Frontend_ 
+- [https://github.com/4DR14N-DEV]
+- [https://github.com/Oskardmt009]
+- [https://github.com/Johanfor]
