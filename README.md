@@ -251,6 +251,38 @@ npm run test:watch
 
 ---
 
+## 📊 Estado del proyecto
+
+### ✅ Completado
+
+- Backend completo con API RESTful y autenticación por roles
+- Endpoint de login con validación diferenciada (bcrypt)
+- Estructura frontend organizada (HTML/CSS)
+- Login funcional con notificaciones personalizadas
+- Documentación completa (README, Swagger)
+
+### 🔧 En desarrollo
+
+- **Interactividad del frontend**: Los archivos JavaScript de las vistas restantes requieren implementación de lógica del lado del cliente:
+  - `registro_usuario.js` — Validación de formularios y consumo de API para registro
+  - `registro_vehiculo.js` — CRUD de vehículos con fetch
+  - `celdas_parqueo.js` — Renderizado dinámico del estado de celdas
+  - `acceso.js` — Gestión de entradas/salidas en tiempo real
+  - `registro_incidencias.js` — Creación y envío de reportes de incidencia
+  - `reporte_consulta.js` — Consulta y filtrado de reportes
+  
+  Cada archivo necesita integración con los endpoints correspondientes del backend mediante la API Fetch, manejo de estado con sessionStorage, y renderizado dinámico del DOM.
+
+### 📋 Pendiente (futuro)
+
+- Implementar autenticación JWT para sesiones persistentes
+- Agregar middleware de validación en rutas del backend
+- Implementar paginación en endpoints de listado
+- Agregar validación de entrada en formularios (frontend y backend)
+- Rate limiting para protección contra abuso de API
+
+---
+
 ## 🤝 Autores
 
 | Nombre | GitHub | Rol |
