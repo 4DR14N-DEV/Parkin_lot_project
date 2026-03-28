@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url(/frontend/assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Light";
+  src: url(/frontend/assets/fonts/Poppins-Light.ttf);
+}
+
+:root {
+  --color_1: #e85715;
+  --color_2: #ffffff;
+  --color_3: #333;
+  --border_1: 2px solid #333;
+  --font_1: "poppins";
+  --font_2: "Light";
+  --shadow_black: 0 0.5em 2em rgba(0, 0, 0, 0.6);
+  --shadow_grey: 0 0.3em 3.5em 2.5em rgba(255, 255, 255, 0.3);
+}
+
+@media (min-width: 992px) {
+  body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-family: var(--font_1);
+    font-weight: bold;
+  }
+
+  .login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 3rem);
+    overflow: hidden;
+  }
+
+  /* ===== LADO IZQUIERDO ===== */
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+  }
+
+  .subtitle {
+    font-family: var(--font_2);
+    margin-bottom: 0.8rem;
+    color: gray;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .elements {
+    font-family: var(--font_2);
+    width: 100%;
+    height: 3rem;
+    padding: 0.4rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+
+  .options input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .options {
+    margin: 0.6rem 0;
+  }
+
+  #forgot-pass {
+    font-family: var(--font_2);
+    font-weight: bold;
+    color: gray;
+    padding-left: 0.3rem;
+  }
+
+  .signin-btn {
+    text-align: center;
+    border-radius: 0.8rem;
+    font-family: var(--font_1);
+    font-size: 1.4rem;
+    padding: 0.4rem;
+    background: var(--color_3);
+    color: var(--color_2);
+    border: none;
+    cursor: pointer;
+  }
+
+  .signup {
+    font-family: var(--font_2);
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  #text-foot {
+    padding-left: 0.4rem;
+    color: gray;
+    font-family: var(--font_2);
+  }
+  /* ===== LADO DERECHO ===== */
+
+  /* ===== LADO DERECHO CORREGIDO ===== */
+
+  h2 {
+    font-family: var(--font_1);
+    font-size: 2.5rem;
+  }
+
+  #p-foot {
+    font-family: var(--font_2);
+  }
+
+  .login-image {
+    position: relative;
+    height: 100%; /* Se acopla a la altura del contenedor */
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 100%; /* Forzamos altura completa */
+    object-fit: cover; /* 🔥 ESTO ES LA CLAVE: evita que se estire feo */
+  }
+
+  .image-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+  }
+
+  #menu {
+    font-family: var(--font_2);
+    border-radius: 0.8rem;
+  }
+
+  .notification {
+    font-family: var(--font_1);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+  }
+  .notification.success {
+    background: #4caf50; /* Verde */
+    color: white;
+  }
+  .notification.error {
+    background: #f44336; /* Rojo */
+    color: white;
+  }
+  .notification span {
+    cursor: pointer;
+    font-family: var(--font_1);
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  footer {
+    bottom: 0;
+    left: 0;
+    height: 3rem;
+    display: flex;
+    width: 100%;
+    background: var(--color_2); /* fondo oscuro */
+    color: var(--color_3); /* texto blanco */
+    border: var(--border_1);
+    box-shadow: var(--shadow_black);
+    font-family: var(--font_2);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -9,3 +9,13 @@ desktop.ini
 
 # Archivos temporales o de caché
 *.log
+
+# Archivos privados
+.env
+test/
+config/
+coverage/
+
+# Dependencias
+node_modules/
+

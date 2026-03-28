@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/frontend/assets/css/index.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/frontend/assets/images/carro.png"
+    />
+  </head>
+
+  <body>
+    <div class="login-container">
+      <div class="login-form">
+        <h1>Welcome back/Bienvenido</h1>
+        <p class="subtitle">Por favor ingrese sus credenciales</p>
+
+        <label class="subtitle" for="menu">Seleccione el tipo de perfil:</label>
+        <select class="elements" name="opciones" id="menu">
+          <option value="">Seleccione un rol...</option>
+          <option value="administrador">Administrador</option>
+          <option value="operador">Operador</option>
+          <option value="usuario">Usuario</option>
+        </select>
+
+        <form id="login-form">
+          <input
+            id="doc-user"
+            class="elements"
+            type="text"
+            placeholder="numero de documento"
+            hidden
+          />
+          <input
+            id="password"
+            class="elements"
+            type="password"
+            placeholder="Password"
+            hidden
+          />
+
+          <div class="options">
+            <input type="checkbox" />
+            <a href="#" id="forgot-pass">Forgot password</a>
+          </div>
+
+          <button id="btn-submit" type="submit" class="signin-btn">
+            Sign in
+          </button>
+        </form>
+
+        <p class="signup">
+          Don't have an account?
+          <a id="text-foot" href="/frontend/views/registro_usuario.html"
+            >Sign up</a
+          >
+        </p>
+      </div>
+
+      <div class="login-image">
+        <img src="/frontend/assets/images/Imagen1.jpg" alt="Background" />
+        <div class="image-text">
+          <h2>Bring your ideas to life.</h2>
+          <p id="p-foot">
+            Sign up for free and enjoy access to all features for 30 days.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © Copyright - 2026: Todos los derechos reservados. Política de privacidad
+    </footer>
+    <script src="/frontend/assets/js/login.js"></script>
+  </body>
+</html>
