@@ -75,12 +75,14 @@ app.get("/", (req, res) => {
       //usuarios
       "GET /api/usuarios": "Listar todos los usuarios",
       "GET /api/usuarios/:id": "Obtener un usuario por ID",
-      "POST /api/usuarios": "Crear un nuevo usuario",
       "POST /api/usuarios/login": "Iniciar sesion",
+      "POST /api/usuarios": "Crear un nuevo usuario",
       "PUT /api/usuarios/:id": "Actualizar un usuario",
       "DELETE /api/usuarios/:id": "Eliminar un usuario",
       //vehiculos
       "GET /api/vehiculos": "Listar todos los vehiculos",
+      "GET /api/vehiculos/usuario/:usuarioId":
+        "Obtener vehiculo(s) asociado(s) a un usuario",
       "GET /api/vehiculos/:id": "Obtener un vehiculo por ID",
       "POST /api/vehiculos": "Crear un nuevo vehiculo",
       "PUT /api/vehiculos/:id": "Actualizar un vehiculo",

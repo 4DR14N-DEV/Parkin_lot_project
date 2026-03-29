@@ -164,6 +164,33 @@ routerUsuario.post("/", async (req, res) => {
   }
 });
 
+/**
+ * @swagger
+ * /api/usuarios/login:
+ *   post:
+ *     summary: Iniciar sesión
+ *     tags: [Usuarios]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - numeroDocumento
+ *               - perfilUsuario
+ *             properties:
+ *               numeroDocumento: {type: string}
+ *               clave: {type: string}
+ *               perfilUsuario: {type: integer}
+ *     responses:
+ *       200:
+ *         description: Acceso exitoso
+ *       401:
+ *         description: Credenciales inválidas
+ *       500:
+ *         description: Error interno del servidor
+ */
 routerUsuario.post("/login", async (req, res) => {
   try {
     const { numeroDocumento, clave, perfilUsuario } = req.body;

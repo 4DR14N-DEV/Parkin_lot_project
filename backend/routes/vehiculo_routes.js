@@ -31,6 +31,51 @@ routerVehiculo.get("/", async (req, res) => {
 
 /**
  * @swagger
+ * /api/vehiculos/usuario/{usuarioId}:
+ *   get:
+ *     summary: Obtener vehículos asociados a un usuario
+ *     tags: [Vehiculos]
+ *     parameters:
+ *       - in: path
+ *         name: usuarioId
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Vehículo(s) obtenido(s) exitosamente
+ *       404:
+ *         description: El usuario no tiene vehículos asociados
+ */
+routerVehiculo.get("/usuario/:usuarioId", async (req, res) => {
+  try {
+    const usuarioId = parseInt(req.params.usuarioId);
+    const vehiculosDeUsuario =
+      await VehiculoService.listarVehiculosPorUsuario(usuarioId);
+
+    if (!vehiculosDeUsuario) {
+      return res.status(404).json({
+        success: false,
+        message: "El usuario no tiene vehiculos asociados",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: vehiculosDeUsuario,
+      message: "Vehiculo(s) obtenido(s) exitosamente",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error al obtener vehiculo(s) asociados",
+      error: error.message,
+    });
+  }
+});
+
+/**
+ * @swagger
  * /api/vehiculos/{id}:
  *   get:
  *     summary: Obtener un vehículo por ID

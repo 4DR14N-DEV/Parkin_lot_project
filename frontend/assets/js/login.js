@@ -1,4 +1,4 @@
-// import UsuarioService from "../../../backend/services/usuario_service.js";
+import { showNotification } from "./auth.js";
 
 //Obtener los elementos HTML y selectores
 const mainForm = document.getElementById("login-form");
@@ -20,25 +20,6 @@ const verifyTypeUser = () => {
     docUser.hidden = false;
     password.hidden = false;
   }
-};
-
-const showNotification = (message, type) => {
-  const div = document.createElement("div");
-  div.className = `notification ${type}`;
-
-  div.innerHTML = `<p>${message}</p>
-  <span>x</span>`;
-
-  const closeBtn = div.querySelector("span");
-  closeBtn.addEventListener("click", () => {
-    div.remove();
-  });
-
-  document.body.appendChild(div);
-
-  setTimeout(() => {
-    div.remove();
-  }, 3000);
 };
 
 const login = async () => {
@@ -80,9 +61,12 @@ const login = async () => {
     const data = await response.json();
 
     if (data.success) {
-      console.log("Usuario:", data.data);
-      showNotification("Login exitoso!", "success");
       sessionStorage.setItem("loguedUser", JSON.stringify(data.data));
+      showNotification("Login exitoso!", "success");
+
+      docUser.value = "";
+      password.value = "";
+      selectOptions.value = "";
 
       setTimeout(() => {
         const profile = data.data.perfilUsuario;

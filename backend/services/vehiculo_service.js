@@ -57,7 +57,7 @@ class VehiculoService {
         modelo: row.modelo,
         marca: row.marca,
         tipo: row.tipo,
-        usuario: row.usuario,
+        usuario: row.usuario_id_usuario,
       });
       return vehiculo;
     });
@@ -89,9 +89,39 @@ class VehiculoService {
       modelo: row.modelo,
       marca: row.marca,
       tipo: row.tipo,
-      usuario: row.usuario,
+      usuario: row.usuario_id_usuario,
     });
     return vehiculo;
+  }
+
+  //Listar vehiculo por Usuario; Útil para listar los vehiculos asociados a un usuario
+  async listarVehiculosPorUsuario(usuarioId) {
+    try {
+      db.getConnection();
+    } catch {
+      await db.connect();
+    }
+
+    const pool = db.getConnection();
+    const [rows] = await pool.query(
+      "SELECT id, placa, color, modelo, marca, tipo, usuario_id_usuario FROM vehiculo WHERE usuario_id_usuario = ?",
+      [usuarioId],
+    );
+
+    if (rows.length === 0) return null;
+
+    const vehiculos = rows.map((row) => {
+      return new Vehiculo({
+        id: row.id,
+        placa: row.placa,
+        color: row.color,
+        modelo: row.modelo,
+        marca: row.marca,
+        tipo: row.tipo,
+        usuario: row.usuario_id_usuario,
+      });
+    });
+    return vehiculos;
   }
 
   async actualizarVehiculo(id, datosActualizados) {
