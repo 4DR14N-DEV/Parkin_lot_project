@@ -6,7 +6,6 @@ const selectOptions = document.getElementById("menu");
 const docUser = document.getElementById("doc-user");
 const password = document.getElementById("password");
 const btnSubmit = document.getElementById("btn-submit");
-const singUp = document.getElementById("text-foot");
 
 //Verificar el tipo de usuario que desea ingresar
 const verifyTypeUser = () => {

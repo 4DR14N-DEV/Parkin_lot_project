@@ -166,6 +166,10 @@
     height: 1.5rem;
     border-radius: 12px;
   }
+
+  #a-users {
+    border-bottom: 2px solid red;
+  }
   /*Fin styles header */
 
   body {

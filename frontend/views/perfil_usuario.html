@@ -35,7 +35,7 @@
             <a href="/frontend/views/registro_vehiculo.html">Vehículos</a>
           </li>
           <li>
-            <a href="/frontend/views/perfil_usuario.html">Usuarios</a>
+            <a id="a-users" href="">Usuarios</a>
             <div class="submenu">
               <ul>
                 <li>
@@ -76,69 +76,75 @@
     <main>
       <div id="container-form">
         <h1>Perfil de Usuario</h1>
-        <form id="perfilForm">
-          <div class="form-grid">
-            <div>
-              <label for="nombre">Nombre completo</label>
-              <input
-                type="text"
-                id="nombre"
-                placeholder="Ingrese su nombre"
-                disabled
-              />
+        <div id="content-wrapper">
+          <form id="perfilForm">
+            <div class="form-grid">
+              <div>
+                <label for="nombre">Nombre completo</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  placeholder="Ingrese su nombre"
+                  disabled
+                />
+              </div>
+
+              <div>
+                <label for="documento">N° documento</label>
+                <input
+                  type="text"
+                  id="documento"
+                  placeholder="Documento asignado"
+                  disabled
+                />
+              </div>
+
+              <div>
+                <label for="correo">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="correo"
+                  placeholder="Ingrese su correo"
+                  disabled
+                />
+              </div>
+
+              <div>
+                <label for="celular">Número de celular</label>
+                <input
+                  type="tel"
+                  id="celular"
+                  placeholder="Ingrese su número"
+                  disabled
+                />
+              </div>
+
+              <span id="estado"></span>
+
+              <span id="perfilUsu"></span>
+
+              <div class="photo-wrap">
+                <label for="foto">Fotografía</label>
+                <img alt="Foto perfil" class="foto-perfil" />
+              </div>
             </div>
 
-            <div>
-              <label for="documento">Número de documento</label>
-              <input
-                type="text"
-                id="documento"
-                placeholder="Documento asignado"
-                disabled
-              />
+            <div class="actions">
+              <button id="btn-update" type="button" class="btn btn-primary">
+                Actualizar
+              </button>
             </div>
+          </form>
 
-            <div>
-              <label for="correo">Correo electrónico</label>
-              <input
-                type="email"
-                id="correo"
-                placeholder="Ingrese su correo"
-                disabled
-              />
+          <dialog id="update-dialog">
+            <div id="title-upd">
+              <h1>Actualizar datos</h1>
             </div>
-
-            <div>
-              <label for="celular">Número de celular</label>
-              <input
-                type="tel"
-                id="celular"
-                placeholder="Ingrese su número"
-                disabled
-              />
-            </div>
-
-            <span id="estado"></span>
-
-            <span id="perfilUsu"></span>
-
-            <div class="photo-wrap">
-              <label for="foto">Fotografía</label>
-              <img alt="Foto perfil" class="foto-perfil" />
-            </div>
-          </div>
-
-          <div class="actions">
-            <button id="btn-update" type="button" class="btn btn-primary">
-              Actualizar
-            </button>
-          </div>
-
-          <dialog id="updateDialog">
-            <h1>Actualizar datos</h1>
             <form method="post" id="form-update">
               <div>
-                <label for="tipo-documento">Tipo de documento:</label>
+                <label class="label-upd" for="tipo-documento"
+                  >Tipo de documento:</label
+                >
                 <select name="tipo-documento" id="tipo-documento">
                   <option value="">Seleccione un tipo de documento:</option>
                   <option value="cc">CC</option>
@@ -201,28 +207,26 @@
 
               <div>
                 <label for="foto-perfil">Foto de perfil:</label>
-                <img alt="foto de usuario" class="foto-perfil" />
+                <img
+                  alt="foto de usuario"
+                  class="foto-perfil"
+                  id="foto-perfil-user"
+                />
               </div>
 
               <div>
-                <label for="estado">Estado:</label>
-                <input type="text" name="estado" id="estado" />
+                <label for="estado-upd">Estado:</label>
+                <input type="text" name="estado" id="estado-upd" disabled />
               </div>
 
-              <div>
-                <label for="password-upd">Clave:</label>
-                <input type="password" name="password-upd" id="password-upd" />
+              <div id="div-buttons">
+                <button id="btn-save" type="submit">Guardar</button>
+                <button id="close-dialog" type="button">Cancelar</button>
               </div>
-
-              <button id="btn-save" type="submit">Guardar</button>
-              <button id="close-dialog" type="button">Cancelar</button>
             </form>
           </dialog>
-
-          <div class="vehiculos">
-            <h2>Vehículos Asociados</h2>
-          </div>
-        </form>
+          <div class="vehiculos"></div>
+        </div>
       </div>
     </main>
 
@@ -230,6 +234,117 @@
     <footer>
       © Copyright - 2026: Todos los derechos reservados. Política de privacidad
     </footer>
+
+    <dialog id="usersDialog">
+      <div id="users-dialog-header">
+        <h2>Usuarios registrados</h2>
+        <button id="close-users-dialog">X</button>
+      </div>
+      <div id="users-table-container"></div>
+    </dialog>
+
+    <dialog id="edit-users-dialog">
+      <div id="edit-title">
+        <h1>Editar datos de usuario</h1>
+      </div>
+      <form method="post" id="edit-users-form">
+        <div>
+          <label class="label-edit-users" for="edit-tipo-documento"
+            >Tipo de documento:</label
+          >
+          <select name="edit-tipo-documento" id="edit-tipo-documento">
+            <option value="">Seleccione un tipo de documento:</option>
+            <option value="cc">CC</option>
+            <option value="pasaporte">Pasaporte</option>
+            <option value="ce">Cédula extranjera</option>
+            <option value="dni">DNI</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="edit-numero-documento">Número de documento:</label>
+          <input
+            type="text"
+            name="edit-numero-documento"
+            id="edit-numero-documento"
+          />
+        </div>
+
+        <div>
+          <label for="edit-primer-nombre">Primer nombre:</label>
+          <input
+            type="text"
+            name="edit-primer-nombre"
+            id="edit-primer-nombre"
+          />
+        </div>
+
+        <div>
+          <label for="edit-segundo-nombre">Segundo nombre:</label>
+          <input
+            type="text"
+            name="edit-segundo-nombre"
+            id="edit-segundo-nombre"
+          />
+        </div>
+
+        <div>
+          <label for="edit-primer-apellido">Primer apellido:</label>
+          <input
+            type="text"
+            name="edit-primer-apellido"
+            id="edit-primer-apellido"
+          />
+        </div>
+
+        <div>
+          <label for="edit-segundo-apellido">Segundo apellido:</label>
+          <input
+            type="text"
+            name="edit-segundo-apellido"
+            id="edit-segundo-apellido"
+          />
+        </div>
+
+        <div>
+          <label for="edit-direccion-correo">Correo electrónico:</label>
+          <input
+            type="email"
+            name="edit-direccion-correo"
+            id="edit-direccion-correo"
+          />
+        </div>
+
+        <div>
+          <label for="edit-numero-celular">Numero de celular:</label>
+          <input
+            type="tel"
+            name="edit-numero-celular"
+            id="edit-numero-celular"
+          />
+        </div>
+
+        <div>
+          <label for="edit-foto-perfil-user">Foto de perfil:</label>
+          <img
+            alt="foto de usuario"
+            class="foto-perfil"
+            id="edit-foto-perfil-user"
+          />
+        </div>
+
+        <div>
+          <label for="edit-estado">Estado:</label>
+          <input type="text" name="estado" id="edit-estado" disabled />
+        </div>
+
+        <div id="edit-div-buttons">
+          <button id="edit-btn-save" type="submit">Guardar</button>
+          <button id="edit-close-dialog" type="button">Cancelar</button>
+        </div>
+      </form>
+    </dialog>
+
     <script type="module" src="/frontend/assets/js/perfil_usuario.js"></script>
   </body>
 </html>

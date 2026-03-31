@@ -168,22 +168,6 @@
   }
   /*Fin styles header */
 
-  #container-registro {
-    padding: 1rem;
-    border-radius: 12px;
-    flex: 1;
-    width: 32rem;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color_2);
-    box-shadow: var(--shadow_black);
-  }
-
-  h1 {
-    font-family: var(--font_1);
-    margin-bottom: 1rem;
-  }
-
   body {
     font-family: var(--font_1);
     background: var(--color_1);
@@ -193,75 +177,144 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-height: 100vh; /* asegura footer al fondo */
+    min-height: 100vh;
+    overflow: hidden;
   }
 
+  /* CONTAINER */
+  .container {
+    border-radius: 12px;
+    flex: 1;
+    width: 92%;
+    max-width: 52rem;
+    padding: 0.6rem 1.5rem;
+    flex-direction: column;
+    background-color: var(--color_2);
+    box-shadow: var(--shadow_black);
+    margin: auto;
+  }
+
+  /* TITULOS */
+  h1 {
+    font-family: var(--font_1);
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--color_1);
+    margin: 0.3rem 0 0.2rem;
+  }
+
+  /* SECCIONES */
+  .section {
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: var(--font_1);
+    background-color: #ffe5da;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: var(--color_1);
+    font-size: 0.8rem;
+  }
+
+  /* GRID 3 COLUMNAS */
   .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* dos columnas */
-    gap: 12px;
-    justify-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem 0.8rem;
   }
 
-  /* Cada bloque de campo (label + input/select/textarea) */
   .form-grid > div {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0.05rem;
   }
 
-  .photo-wrap {
-    grid-column: span 2;
-  }
-
-  /* Inputs y selects: estilo uniforme */
-  .form-grid input,
-  .form-grid select {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc; /* borde gris claro, limpio */
-    outline: none;
-    background: #fff;
-  }
-
-  /* Bloque de acciones (botones) */
-  .actions {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  /* ===========================
-   Botones
-   =========================== */
-  .actions {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .btn {
+  /* LABELS */
+  label {
     font-family: var(--font_1);
-    padding: 10px 16px;
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.75rem;
+    color: #34495e;
+  }
+
+  /* INPUTS */
+  .inp-main,
+  #tipo-documento,
+  #perfil-usuario,
+  select {
+    font-family: var(--font_2);
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: var(--color_2);
+  }
+
+  .inp-main:focus,
+  #tipo-documento:focus,
+  #perfil-usuario:focus,
+  select:focus {
+    border-color: var(--color_1);
+  }
+
+  /* REQUIRED */
+  .required {
+    color: red;
+  }
+
+  /* BOTONES */
+  .buttons {
+    margin-top: 0.6rem;
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .buttons .btn-primary,
+  .buttons .btn-secondary {
+    flex: 1;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-family: var(--font_1);
+    padding: 0.45rem;
     border-radius: 8px;
     border: none;
-    color: #fff;
     font-weight: 600;
+    font-size: 0.85rem;
     cursor: pointer;
+    color: var(--color_2);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .btn-primary {
     background: linear-gradient(180deg, #bf1b2b, #7f0f12);
   }
 
+  .btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(191, 27, 43, 0.4);
+  }
+
   .btn-secondary {
     background: linear-gradient(180deg, #2b6bff, #1033b8);
   }
 
+  .btn-secondary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(43, 107, 255, 0.4);
+  }
+
+  /* NOTIFICACIONES */
   .notification {
     font-family: var(--font_1);
     position: fixed;
@@ -275,20 +328,24 @@
     z-index: 1000;
     animation: slideIn 0.3s ease;
   }
+
   .notification.success {
-    background: #4caf50; /* Verde */
+    background: #4caf50;
     color: white;
   }
+
   .notification.error {
-    background: #f44336; /* Rojo */
+    background: #f44336;
     color: white;
   }
+
   .notification span {
     cursor: pointer;
     font-family: var(--font_1);
     font-size: 1.2rem;
     margin-left: 1rem;
   }
+
   @keyframes slideIn {
     from {
       transform: translateX(100%);
@@ -300,13 +357,13 @@
     }
   }
 
-  /*Styles para footer */
+  /* FOOTER */
   footer {
     height: 3rem;
     display: flex;
     width: 100%;
-    background: var(--color_2); /* fondo oscuro */
-    color: var(--color_3); /* texto blanco */
+    background: var(--color_2);
+    color: var(--color_3);
     border: var(--border_1);
     box-shadow: var(--shadow_black);
     font-family: var(--font_2);

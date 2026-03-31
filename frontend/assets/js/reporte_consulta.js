@@ -1,75 +1,24 @@
-const buttons = document.querySelectorAll(".menu-btn");
-const result = document.getElementById("result");
-let currentReport = null;
+import { restricUserAccess, showNotification } from "./auth.js";
 
-buttons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    buttons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    currentReport = btn.dataset.report;
-    result.innerHTML = `<h3>Reporte seleccionado: ${btn.textContent}</h3>`;
-  });
-});
+restricUserAccess();
 
-function generateReport() {
-  if (!currentReport) {
-    result.innerHTML = "<h3>Selecciona primero un reporte</h3>";
-    return;
-  }
-
-  switch (currentReport) {
-    case "usuarios":
-      renderTable(
-        ["Nombre", "Documento", "Rol"],
-        [
-          ["Ana Ruiz", "123", "Admin"],
-          ["Carlos Perez", "456", "Usuario"],
-        ],
-      );
-      break;
-
-    case "vehiculos":
-      renderTable(
-        ["Placa", "Tipo", "Propietario"],
-        [
-          ["ABC123", "Carro", "Ana Ruiz"],
-          ["XYZ987", "Moto", "Carlos Perez"],
-        ],
-      );
-      break;
-
-    case "pico":
-      result.innerHTML = `
-            <h3>Vehículos restringidos</h3>
-            <div class="cards">
-              <div class="card">
-                Total hoy
-                <h2>18</h2>
-              </div>
-            </div>`;
-      break;
-
-    default:
-      result.innerHTML =
-        "<h3>Reporte generado (demo visual lista para backend)</h3>";
+//Redirect link usuarios
+const usersLink = document.getElementById("a-users");
+if (usersLink) {
+  const user = JSON.parse(sessionStorage.getItem("loguedUser"));
+  if (user.perfilUsuario === 1 || user.perfilUsuario === 2) {
+    usersLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href =
+        "/frontend/views/perfil_usuario.html?openDialog=users";
+    });
+  } else {
+    usersLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      showNotification("No tienes acceso a esta sección", "error");
+    });
+    usersLink.style.opacity = "0.5";
+    usersLink.style.cursor = "not-allowed";
+    usersLink.style.pointerEvents = "none";
   }
 }
-
-function renderTable(headers, rows) {
-  let html = "<table><tr>";
-  headers.forEach((h) => (html += `<th>${h}</th>`));
-  html += "</tr>";
-
-  rows.forEach((r) => {
-    html += "<tr>";
-    r.forEach((c) => (html += `<td>${c}</td>`));
-    html += "</tr>";
-  });
-
-  html += "</table>";
-  result.innerHTML = html;
-}
-
-window.onload = () => {
-  document.activeElement.blur();
-};
