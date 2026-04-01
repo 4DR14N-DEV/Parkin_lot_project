@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restricción Pico & Placa</title>
+    <title>Pico y Placa</title>
     <link
       rel="icon"
-      type="image/mpeg"
+      type="image/png"
       href="/frontend/assets/images/restricciones.png"
     />
     <link rel="stylesheet" href="/frontend/assets/css/pico_placa.css" />
@@ -25,6 +25,7 @@
       <nav class="menu" aria-label="Menú principal">
         <ul>
           <li><a href="/frontend/views/reporte_consulta.html">Reportes</a></li>
+          <li><a href="/frontend/views/pico_placa.html">Pico & Placa</a></li>
           <li>
             <a href="/frontend/views/registro_incidencias.html">Incidencias</a>
           </li>
@@ -73,88 +74,73 @@
       </div>
     </header>
 
-    <div id="container">
-      <form action="POST" id="form-pyP">
-        <h1>Restricción Pico & Placa</h1>
+    <main>
+      <div class="pico-placa-wrapper">
+        <h1>Pico & Placa</h1>
 
-        <div id="selector-vehiculo">
-          <p class="p-seleccion">Selecciona el tipo de vehículo</p>
-          <input
-            type="radio"
-            class="seleccion-vehiculo"
-            id="btn-moto"
-            name="seleccion"
-            value="btn-moto"
-          />
-          <label for="btn-moto">Moto (Primer dígito)</label>
-          <input
-            type="radio"
-            class="seleccion-vehiculo"
-            id="btn-carro"
-            name="seleccion"
-            value="btn-carro"
-          />
-          <label for="btn-carro">Carro (Ultimo dígito)</label>
-        </div>
+        <div class="pico-placa-layout">
+          <!-- Formulario -->
+          <div class="pico-placa-form-container">
+            <div class="section-title">Nueva Restricción</div>
+            <form id="form-pico-placa">
+              <div>
+                <label for="tipo-vehiculo"
+                  >Tipo de vehículo <span class="required">*</span></label
+                >
+                <select id="tipo-vehiculo" required>
+                  <option value="">Seleccione</option>
+                  <option value="Carro">Carro (último dígito)</option>
+                  <option value="Moto">Moto (primer dígito)</option>
+                </select>
+              </div>
 
-        <div id="restricciones">
-          <div class="dias">
-            <label for="lunes">Lunes</label>
-            <input
-              type="text"
-              id="lunes"
-              name="martes"
-              placeholder="Ej: 0, 1"
-            />
+              <div>
+                <label for="dia">Día <span class="required">*</span></label>
+                <select id="dia" required>
+                  <option value="">Seleccione</option>
+                  <option value="Lunes">Lunes</option>
+                  <option value="Martes">Martes</option>
+                  <option value="Miercoles">Miércoles</option>
+                  <option value="Jueves">Jueves</option>
+                  <option value="Viernes">Viernes</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="numero"
+                  >Dígito restringido <span class="required">*</span></label
+                >
+                <input
+                  id="numero"
+                  type="number"
+                  min="0"
+                  max="9"
+                  required
+                  placeholder="0 - 9"
+                />
+              </div>
+
+              <div class="buttons">
+                <button type="submit" class="btn-primary">
+                  Guardar Restricción
+                </button>
+              </div>
+            </form>
           </div>
 
-          <div class="dias">
-            <label for="martes">Martes</label>
-            <input
-              type="martes"
-              id="martes"
-              name="martes"
-              placeholder="Ej: 2, 3"
-            />
-          </div>
-
-          <div class="dias">
-            <label for="miercoles">Miercoles</label>
-            <input
-              type="text"
-              name="miercoles"
-              id="miercoles"
-              placeholder="Ej: 4, 5"
-            />
-          </div>
-
-          <div class="dias">
-            <label for="jueves">Jueves</label>
-            <input
-              type="text"
-              name="jueves"
-              id="jueves"
-              placeholder="Ej: 6, 7"
-            />
-          </div>
-
-          <div class="dias">
-            <label for="viernes">Viernes</label>
-            <input
-              type="text"
-              name="viernes"
-              id="viernes"
-              placeholder="Ej: 8, 9"
-            />
+          <!-- Tabla de restricciones -->
+          <div class="pico-placa-table-container">
+            <div class="section-title">Restricciones Registradas</div>
+            <div id="restricciones-container"></div>
           </div>
         </div>
-
-        <button type="submit" id="btn-submit">Guardar Restricción</button>
-      </form>
-    </div>
+      </div>
+    </main>
 
     <footer>
       © Copyright - 2026: Todos los derechos reservados. Política de privacidad
     </footer>
+
+    <script type="module" src="/frontend/assets/js/pico_placa.js"></script>
   </body>
 </html>

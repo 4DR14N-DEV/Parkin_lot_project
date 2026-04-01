@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,6 +25,7 @@
       <nav class="menu" aria-label="Menú principal">
         <ul>
           <li><a href="/frontend/views/reporte_consulta.html">Reportes</a></li>
+          <li><a href="/frontend/views/pico_placa.html">Pico & Placa</a></li>
           <li>
             <a href="/frontend/views/registro_incidencias.html">Incidencias</a>
           </li>
@@ -73,263 +74,41 @@
       </div>
     </header>
 
-    <div id="container">
-      <div id="container-autos">
-        <h1 id="area-autos">Automovil</h1>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 001</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 002</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 003</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 004</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 005</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 006</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 007</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 008</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 009</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 010</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 011</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 012</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 013</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 014</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 015</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 016</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 017</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 018</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 019</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">AUT 020</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-      </div>
+    <main>
+      <div class="celdas-wrapper">
+        <h1>Celdas de Parqueo</h1>
 
-      <div id="container-motosb1">
-        <h1 id="area-motosb1">Motos Bloque 1</h1>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 001</h2>
-          <span class="estado-celda">Disponible</span>
+        <div class="leyenda">
+          <span class="leyenda-item">
+            <span class="leyenda-color disponible"></span> disponible
+          </span>
+          <span class="leyenda-item">
+            <span class="leyenda-color ocupado"></span> ocupado
+          </span>
         </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 002</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 003</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 004</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 005</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 006</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 007</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 008</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 009</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 010</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 011</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 012</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 013</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 014</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 015</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 016</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 017</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 018</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 019</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB1 020</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-      </div>
 
-      <div id="container-motosb2">
-        <h1 id="area-motosb2">Motos Bloque 2</h1>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 001</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 002</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 003</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 004</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 005</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 006</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 007</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 008</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 009</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 010</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 011</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 012</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 013</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 014</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 015</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 016</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 017</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 018</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 019</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
-        <div class="celdas">
-          <h2 class="num-celda">MOB2 020</h2>
-          <span class="estado-celda">Disponible</span>
-        </div>
+        <div id="celdas-container"></div>
       </div>
-    </div>
+    </main>
 
     <footer>
       © Copyright - 2026: Todos los derechos reservados. Política de privacidad
     </footer>
+
+    <dialog id="vehiculo-dialog">
+      <div id="vehiculo-dialog-header">
+        <h2>Vehículo en celda</h2>
+        <button id="close-vehiculo-dialog">X</button>
+      </div>
+      <div id="vehiculo-dialog-content">
+        <p><strong>Placa:</strong> <span id="vd-placa"></span></p>
+        <p><strong>Tipo:</strong> <span id="vd-tipo"></span></p>
+        <p><strong>Marca:</strong> <span id="vd-marca"></span></p>
+        <p><strong>Modelo:</strong> <span id="vd-modelo"></span></p>
+        <p><strong>Color:</strong> <span id="vd-color"></span></p>
+        <p><strong>Usuario:</strong> <span id="vd-usuario"></span></p>
+      </div>
+    </dialog>
 
     <script type="module" src="/frontend/assets/js/celdas_parqueo.js"></script>
   </body>

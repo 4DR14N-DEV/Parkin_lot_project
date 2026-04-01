@@ -27,6 +27,7 @@
       <nav class="menu" aria-label="Menú principal">
         <ul>
           <li><a href="/frontend/views/reporte_consulta.html">Reportes</a></li>
+          <li><a href="/frontend/views/pico_placa.html">Pico & Placa</a></li>
           <li>
             <a href="/frontend/views/registro_incidencias.html">Incidencias</a>
           </li>
@@ -35,7 +36,7 @@
           </li>
           <li><a href="/frontend/views/acceso.html">Accesos</a></li>
           <li>
-            <a href="/frontend/views/registro_vehiculos.html">Vehículos</a>
+            <a href="/frontend/views/registro_vehiculo.html">Vehículos</a>
           </li>
           <li>
             <a id="a-users" href="">Usuarios</a>
@@ -75,64 +76,99 @@
       </div>
     </header>
 
-    <!-- Main -->
     <main>
-      <div id="container-incidencia">
-        <h1>Registro de Incidencias</h1>
-        <form id="incidenciaForm">
-          <div class="form-grid">
-            <div>
-              <label for="placa">Placa del vehículo *</label>
-              <input
-                type="text"
-                id="placa"
-                name="placa"
-                required
-                placeholder="Ej: ABC123"
-              />
-            </div>
+      <div class="container">
+        <h1>Incidencias</h1>
 
-            <div id="tipo">
-              <label for="tipo">Tipo de incidencia *</label>
-              <select name="tipo" required>
-                <option value="">Selección</option>
-                <option>Rayón</option>
-                <option>Choque</option>
-                <option>Atropellamiento</option>
-                <option>Golpe contra muro</option>
-              </select>
-            </div>
+        <div class="incidencias-layout">
+          <!-- Formulario -->
+          <div class="incidencias-form-container">
+            <div class="section-title">Nueva Incidencia</div>
+            <form id="form-incidencia">
+              <div>
+                <label for="nombre"
+                  >Nombre de la incidencia
+                  <span class="required">*</span></label
+                >
+                <input
+                  id="nombre"
+                  class="inp-main"
+                  type="text"
+                  required
+                  placeholder="Ej: Rayón en carro"
+                />
+              </div>
 
-            <div>
-              <label for="fecha">Fecha *</label>
-              <input type="date" id="fecha" name="fecha" required />
-            </div>
-
-            <div>
-              <label for="hora">Hora *</label>
-              <input type="time" id="hora" name="hora" required />
-            </div>
-
-            <div>
-              <label for="descripcion">Descripción</label>
-              <textarea
-                id="descripcion"
-                name="descripcion"
-                rows="4"
-                placeholder="Detalles adicionales"
-              ></textarea>
-            </div>
+              <div class="buttons">
+                <button type="submit" class="btn-primary">
+                  Registrar Incidencia
+                </button>
+                <button type="button" id="btn-reporte-incidencia" class="btn-secondary">
+                  Reportar Incidencia
+                </button>
+              </div>
+            </form>
           </div>
 
-          <div class="actions">
-            <button type="submit" class="btn btn-primary">Registrar</button>
-            <button type="reset" class="btn btn-secondary">Cancelar</button>
+          <!-- Tabla de incidencias -->
+          <div class="incidencias-table-container">
+            <div class="section-title">Incidencias Registradas</div>
+            <div id="incidencias-container"></div>
           </div>
-        </form>
+        </div>
       </div>
     </main>
 
-    <!-- Footer (igual que en registro.html) -->
+    <!-- Dialog editar incidencia -->
+    <dialog id="edit-incidencia-dialog">
+      <div id="edit-incidencia-title">
+        <h1>Editar incidencia</h1>
+      </div>
+      <form method="post" id="edit-incidencia-form">
+        <div>
+          <label for="edit-nombre">Nombre:</label>
+          <input type="text" id="edit-nombre" required />
+        </div>
+        <div id="edit-incidencia-buttons">
+          <button id="edit-incidencia-save" type="submit">Guardar</button>
+          <button id="edit-incidencia-close" type="button">Cancelar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Dialog reportar incidencia -->
+    <dialog id="reporte-incidencia-dialog">
+      <div id="reporte-incidencia-title">
+        <h1>Reportar Incidencia</h1>
+      </div>
+      <form method="post" id="reporte-incidencia-form">
+        <div>
+          <label for="reporte-vehiculo"
+            >Vehículo <span class="required">*</span></label
+          >
+          <select id="reporte-vehiculo" required>
+            <option value="">Seleccione un vehículo</option>
+          </select>
+        </div>
+        <div>
+          <label for="reporte-incidencia"
+            >Tipo de incidencia <span class="required">*</span></label
+          >
+          <select id="reporte-incidencia" required>
+            <option value="">Seleccione una incidencia</option>
+          </select>
+        </div>
+        <div id="reporte-incidencia-buttons">
+          <button id="reporte-incidencia-save" type="submit">
+            Guardar Reporte
+          </button>
+          <button id="reporte-incidencia-close" type="button">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </dialog>
+
     <footer>
       © Copyright - 2026: Todos los derechos reservados. Política de privacidad
     </footer>

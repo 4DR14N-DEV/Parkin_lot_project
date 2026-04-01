@@ -201,7 +201,9 @@ if (editFormUsers && editUsersDialog) {
   editFormUsers.addEventListener("submit", async (e) => {
     e.preventDefault();
     const updateData = {
-      tipoDocumento: document.getElementById("edit-tipo-documento").value,
+      tipoDocumento: document
+        .getElementById("edit-tipo-documento")
+        .value.toUpperCase(),
       numeroDocumento: document.getElementById("edit-numero-documento").value,
       primerNombre: document.getElementById("edit-primer-nombre").value,
       segundoNombre: document.getElementById("edit-segundo-nombre").value,

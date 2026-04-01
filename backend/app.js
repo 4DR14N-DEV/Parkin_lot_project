@@ -124,7 +124,7 @@ app.get("/", (req, res) => {
       "POST /api/pico-y-placa": "Crear un nuevo pico y placa",
       "PUT /api/pico-y-placa/:id": "Actualizar un pico y placa",
       "DELETE /api/pico-y-placa/:id": "Eliminar un pico y placa",
-      //Reporte de incidecnias
+      //Reporte de incidencias
       "GET /api/reporte-incidencias": "Listar todos los reportes de incidencia",
       "GET /api/reporte-incidencias/vehiculo/:vehiculoId/incidencia/:incidenciaId":
         "Obtener un reporte de incidencia exacto",

@@ -8,7 +8,7 @@ class PicoPlaca {
    * @param {Object} PicoPlaca - objeto que contiene las propiedades para crear pico y placa
    * @param {number} id - Id del pico y placa
    * @param {string} tipoVehiculo - Tipo de vehiculo a restringir
-   * @param {number} numero - Numero a restringir
+   * @param {string} numero - Numero a restringir
    * @param {string} dia - Dia a restringir
    */
 

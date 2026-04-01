@@ -99,7 +99,7 @@ const renderUpdateData = () => {
 
 const catchDataUpdated = async () => {
   const updateData = {
-    tipoDocumento: slcDocType.value,
+    tipoDocumento: slcDocType.value.toUpperCase(),
     numeroDocumento: docNumber.value,
     primerNombre: firstName.value,
     segundoNombre: secondName.value,

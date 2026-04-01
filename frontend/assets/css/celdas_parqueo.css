@@ -23,6 +23,8 @@
   --font_2: "Light";
   --shadow_black: 0 0.5em 2em rgba(0, 0, 0, 0.6);
   --shadow_grey: 0 0.3em 3.5em 2.5em rgba(255, 255, 255, 0.3);
+  --disponible: #4caf50;
+  --ocupado: #f44336;
 }
 
 @media (min-width: 992px) {
@@ -39,7 +41,7 @@
     color: var(--color_2);
     border: var(--border_1);
     box-shadow: var(--shadow_black);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   #container-img {
@@ -166,10 +168,6 @@
     height: 1.5rem;
     border-radius: 12px;
   }
-
-  #a-users {
-    border-bottom: 2px solid red;
-  }
   /*Fin styles header */
 
   body {
@@ -179,119 +177,214 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+
+  /* WRAPPER */
+  .celdas-wrapper {
+    flex: 1;
+    width: 95%;
+    padding: 1.2rem 1rem;
+    background-color: var(--color_2);
+    border-radius: 12px 12px 0 0;
+    box-shadow: var(--shadow_black);
+    margin-left: 1.8rem;
+  }
+
+  h1 {
+    font-family: var(--font_1);
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--color_1);
+    margin-bottom: 0.6rem;
+  }
+
+  /* LEYENDA */
+  .leyenda {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .leyenda-item {
+    font-family: var(--font_2);
+    font-size: 0.85rem;
+    color: var(--color_3);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .leyenda-color {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 4px;
+  }
+
+  .leyenda-color.disponible {
+    background: var(--disponible);
+  }
+
+  .leyenda-color.ocupado {
+    background: var(--ocupado);
+  }
+
+  /* GRID DE CELDAS */
+  #celdas-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  /* CARD DE CELDA */
+  .celda-card {
+    border-radius: 10px;
+    padding: 0.8rem;
+    text-align: center;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .celda-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .celda-card.disponible {
+    background: linear-gradient(145deg, #e8f5e9, #c8e6c9);
+    border: 2px solid var(--disponible);
+  }
+
+  .celda-card.ocupado {
+    background: linear-gradient(145deg, #ffebee, #ffcdd2);
+    border: 2px solid var(--ocupado);
+  }
+
+  .celda-nombre {
+    font-family: var(--font_1);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .celda-card.disponible .celda-nombre {
+    color: #2e7d32;
+  }
+
+  .celda-card.ocupado .celda-nombre {
+    color: #c62828;
+  }
+
+  .celda-id {
+    font-family: var(--font_2);
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 0.15rem;
+  }
+
+  .celda-tipo {
+    font-family: var(--font_2);
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 0.4rem;
+  }
+
+  .celda-estado {
+    font-family: var(--font_1);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  .celda-card.disponible .celda-estado {
+    background: var(--disponible);
+    color: white;
+  }
+
+  .celda-card.ocupado .celda-estado {
+    background: var(--ocupado);
+    color: white;
+  }
+
+  /* ===== DIALOG VEHÍCULO ===== */
+  #celda-card.ocupado {
+    cursor: pointer;
+  }
+  #vehiculo-dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: var(--shadow_black);
+    background: var(--color_2);
+    max-width: 400px;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #vehiculo-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+  }
+  #vehiculo-dialog-header {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 100vh; /* asegura footer al fondo */
+    background: var(--color_1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px 12px 0 0;
   }
-
-  #container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    width: 100%;
-    padding: 1em;
-    gap: 2em;
-  }
-
-  /*Celdas Automovil */
-  #area-autos {
+  #vehiculo-dialog-header h2 {
     font-family: var(--font_1);
-    font-size: 2.5em;
-    grid-column: span 5;
+    color: var(--color_2);
+    margin: 0;
+    font-size: 1rem;
+  }
+  #close-vehiculo-dialog {
+    background: var(--color_2);
+    color: var(--color_1);
+    border: 2px solid var(--color_2);
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-family: var(--font_1);
     font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
-
-  #container-autos {
-    height: 40%;
-    width: 40%;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-template-rows: repeat(6, auto);
-    gap: 1em;
-    justify-content: flex-start;
-    align-content: center;
-    margin: 1.2em;
-  }
-
-  .celdas {
-    border: 0.2em solid rgba(120, 255, 50);
-    border-radius: 0.6em;
-    box-shadow: 0.5em 0.5em 2em 0.7em rgba(0, 0, 0, 0.4);
-    height: 3.5em;
-    width: 5em;
-    background-color: lightgreen;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s ease;
-  }
-
-  .celdas:hover {
+  #close-vehiculo-dialog:hover {
+    background: var(--color_1);
+    color: var(--color_2);
     transform: scale(1.1);
   }
-
-  .num-celda {
-    font-family: var(--font_1);
-    text-align: center;
-    justify-content: center;
-    font-size: 0.9em;
+  #vehiculo-dialog-content {
+    padding: 1rem 1.5rem;
   }
-
-  .estado-celda {
+  #vehiculo-dialog-content p {
     font-family: var(--font_2);
-    font-size: 0.9em;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    color: var(--color_3);
+    font-weight: 500;
   }
-
-  /*Motos bloque 1 */
-  #area-motosb1 {
+  #vehiculo-dialog-content strong {
     font-family: var(--font_1);
-    font-size: 2.5em;
-    grid-column: span 5;
-    font-weight: bold;
+    color: var(--color_1);
   }
 
-  #container-motosb1 {
-    height: 40%;
-    width: 40%;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-template-rows: repeat(6, auto);
-    gap: 1em;
-    justify-content: flex-start;
-    align-content: center;
-    margin: 1.2em;
-  }
-
-  /*Motos bloque 2 */
-  #area-motosb2 {
-    font-family: var(--font_1);
-    font-size: 2.5em;
-    grid-column: span 5;
-    font-weight: bold;
-  }
-
-  #container-motosb2 {
-    height: 40%;
-    width: 40%;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-template-rows: repeat(6, auto);
-    gap: 1em;
-    justify-content: flex-start;
-    align-content: center;
-    margin: 1.2em;
-  }
-
-  /*selector para celda ocupada */
-  .ocupado {
-    background-color: red;
-    border: var(--border_1);
-    transform: scale(1);
-    text-align: center;
-  }
-
+  /* NOTIFICACIONES */
   .notification {
     font-family: var(--font_1);
     position: fixed;
@@ -305,20 +398,24 @@
     z-index: 1000;
     animation: slideIn 0.3s ease;
   }
+
   .notification.success {
-    background: #4caf50; /* Verde */
+    background: #4caf50;
     color: white;
   }
+
   .notification.error {
-    background: #f44336; /* Rojo */
+    background: #f44336;
     color: white;
   }
+
   .notification span {
     cursor: pointer;
     font-family: var(--font_1);
     font-size: 1.2rem;
     margin-left: 1rem;
   }
+
   @keyframes slideIn {
     from {
       transform: translateX(100%);
@@ -330,19 +427,19 @@
     }
   }
 
-  /*Styles para footer */
+  /* FOOTER */
   footer {
     height: 3rem;
     display: flex;
     width: 100%;
-    background: var(--color_2); /* fondo oscuro */
-    color: var(--color_3); /* texto blanco */
+    background: var(--color_2);
+    color: var(--color_3);
     border: var(--border_1);
     box-shadow: var(--shadow_black);
     font-family: var(--font_2);
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: 1.8rem;
   }
 }

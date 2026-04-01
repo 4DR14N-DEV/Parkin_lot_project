@@ -335,6 +335,45 @@
     margin-top: 0.3em;
   }
 
+  /* NOTIFICACIONES */
+  .notification {
+    font-family: var(--font_1);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+  }
+  .notification.success {
+    background: #4caf50;
+    color: white;
+  }
+  .notification.error {
+    background: #f44336;
+    color: white;
+  }
+  .notification span {
+    cursor: pointer;
+    font-family: var(--font_1);
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   /*Styles para footer */
   footer {
     height: 2.3rem;
@@ -348,5 +387,75 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media print {
+  header,
+  .sidebar,
+  .filters,
+  footer,
+  .notification,
+  nav,
+  .tools {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  body {
+    display: block !important;
+    background: white !important;
+    color: black !important;
+    min-height: auto !important;
+  }
+
+  main {
+    display: block !important;
+    flex: none !important;
+  }
+
+  .content {
+    padding: 0 !important;
+    flex: none !important;
+  }
+
+  .result {
+    border: none !important;
+    background: white !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 0.9rem !important;
+    min-height: auto !important;
+  }
+
+  .result h3 {
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.1rem !important;
+    color: black !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th {
+    background: #e85715 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    border: 1px solid #ccc !important;
+    padding: 0.4em !important;
+    font-size: 0.8rem !important;
+  }
+
+  td {
+    border: 1px solid #ccc !important;
+    padding: 0.4em !important;
+    font-size: 0.8rem !important;
+    color: black !important;
   }
 }
