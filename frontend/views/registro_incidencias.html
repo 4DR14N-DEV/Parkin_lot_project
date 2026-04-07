@@ -58,21 +58,8 @@
 
       <div class="tools">
         <div class="search">
-          <input type="search" id="inp-search" placeholder="Buscar" />
-
-          <button class="btn-search">
-            <img
-              src="/frontend/assets/images/lupa.png"
-              id="lupa-png"
-              alt="Buscar"
-            />
-          </button>
+          <button id="btn-logout" class="btn-search">Cerrar sesion</button>
         </div>
-
-        <select id="language">
-          <option>Español</option>
-          <option>Inglés</option>
-        </select>
       </div>
     </header>
 
@@ -103,7 +90,11 @@
                 <button type="submit" class="btn-primary">
                   Registrar Incidencia
                 </button>
-                <button type="button" id="btn-reporte-incidencia" class="btn-secondary">
+                <button
+                  type="button"
+                  id="btn-reporte-incidencia"
+                  class="btn-secondary"
+                >
                   Reportar Incidencia
                 </button>
               </div>
@@ -162,9 +153,7 @@
           <button id="reporte-incidencia-save" type="submit">
             Guardar Reporte
           </button>
-          <button id="reporte-incidencia-close" type="button">
-            Cancelar
-          </button>
+          <button id="reporte-incidencia-close" type="button">Cancelar</button>
         </div>
       </form>
     </dialog>

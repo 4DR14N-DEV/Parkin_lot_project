@@ -29,7 +29,10 @@ const restricUserAccess = () => {
     const headerLinks = document.querySelectorAll("header a, header nav a");
 
     headerLinks.forEach((link) => {
-      if (link.href.includes("perfil_usuario")) {
+      if (
+        link.href.includes("perfil_usuario") ||
+        link.href.includes("celdas_parqueo")
+      ) {
         return;
       }
 
@@ -248,6 +251,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("close-users-dialog");
   if (closeBtn) {
     closeBtn.addEventListener("click", closeUsersDialog);
+  }
+
+  // Lógica de Cerrar Sesión Centralizada
+  const logoutBtn = document.getElementById("btn-logout");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      sessionStorage.removeItem("loguedUser");
+      window.location.href = "/frontend/views/index.html";
+    });
   }
 });
 export {
