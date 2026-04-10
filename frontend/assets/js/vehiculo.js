@@ -90,6 +90,7 @@ const createVehicles = async () => {
     showNotification("Error al registrar vehículo", "error");
   }
 };
+//---
 
 let editingVehicleId = null;
 

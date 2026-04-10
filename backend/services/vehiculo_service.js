@@ -12,7 +12,6 @@ class VehiculoService {
       usuario,
     });
 
-    //Conectar si aun hay conexion activa
     try {
       db.getConnection();
     } catch {

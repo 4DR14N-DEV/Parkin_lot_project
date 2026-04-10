@@ -64,7 +64,7 @@ const renderUserData = async () => {
     const data = await response.json();
 
     if (!data.success || !data.data || data.data.length === 0) {
-      // showNotification("No tiene Vehiculos asociados", "error");
+      userVehicles.innerHTML = "<h2>Vehículos Asociados</h2>";
       return;
     }
 
